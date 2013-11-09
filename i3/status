@@ -1,0 +1,55 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        color_good = "#00FF00"
+        interval = 5
+}
+
+order += "tztime local"
+order += "ipv6"
+order += "disk /"
+order += "run_watch DHCP"
+order += "run_watch VPN"
+order += "ethernet em1"
+order += "battery 0"
+order += "cpu_temperature 0"
+order += "load"
+order += "tztime amsterdam"
+
+ethernet em1 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining %emptytime"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+tztime local {
+        format = "Local [%Y-%m-%d %H:%M:%S]"
+}
+
+tztime amsterdam {
+        format = "Amsterdam [%Y-%m-%d %H:%M:%S %Z]"
+        timezone = "Europe/Amsterdam"
+}
+
+load {
+        format = "%5min"
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+disk "/" {
+        format = "%free"
+}
