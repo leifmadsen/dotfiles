@@ -43,6 +43,7 @@ if has('autocmd')
   autocmd FileType python set expandtab|set shiftwidth=4|set tabstop=4
   autocmd FileType html,xml set listchars-=tab:>.
   autocmd FileType ruby set expandtab|set shiftwidth=2|set tabstop=2
+  autocmd Filetype diff set noexpandtab|set shiftwidth=4|set tabstop=4
 endif
 
 set pastetoggle=<F2>
