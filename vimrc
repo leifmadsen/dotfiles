@@ -32,6 +32,7 @@ filetype plugin indent on
 
 if &t_Co >= 256 || has("gui_running")
   colorscheme mustang
+  set background=dark
 endif
 
 if &t_Co > 2 || has("gui_running")

@@ -5,7 +5,6 @@ general {
         interval = 5
 }
 
-order += "tztime local"
 order += "ipv6"
 order += "disk /"
 order += "run_watch DHCP"
@@ -14,7 +13,8 @@ order += "ethernet em1"
 order += "battery 0"
 order += "cpu_temperature 0"
 order += "load"
-order += "tztime amsterdam"
+order += "tztime local"
+#order += "tztime berlin"
 
 ethernet em1 {
         # if you use %speed, i3status requires the cap_net_admin capability
@@ -32,13 +32,17 @@ run_watch DHCP {
         pidfile = "/var/run/dhclient*.pid"
 }
 
-tztime local {
-        format = "Local [%Y-%m-%d %H:%M:%S]"
+run_watch VPN {
+        pidfile = "/var/run/vpnc/pid"
 }
 
-tztime amsterdam {
-        format = "Amsterdam [%Y-%m-%d %H:%M:%S %Z]"
-        timezone = "Europe/Amsterdam"
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+tztime berlin {
+        format = "%Y-%m-%d %H:%M:%S %Z"
+        timezone = "Europe/Berlin"
 }
 
 load {

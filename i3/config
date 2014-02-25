@@ -118,6 +118,10 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# change brightness
+bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -142,7 +146,14 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+# resize a window
 bindsym $mod+r mode "resize"
+
+# lock the screen
+bindsym $mod+Shift+x exec "i3lock -c 111111"
+
+# show a calendar
+bindsym $mod+c exec "gsimplecal"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -156,7 +167,10 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pa-applet
 exec --no-startup-id dropbox start
 exec --no-startup-id pidgin
-exec --no-startup-id xset dpms 300   # set the screen timeout
+exec --no-startup-id xset dpms 300 600 900 &   # set the screen timeout
+exec --no-startup-id xsetroot -solid "#333333"
+exec --no-startup-id dunst &
+
 
 # class                 border  backgr. text    indicator
 client.focused          #3F8AC2 #096BAA #97FFF4 #00DA8E
@@ -171,19 +185,35 @@ font pango: Ubuntu Mono 10
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
+
+#bar {
+#        #status_command conky -c ~/.i3bar_conkyrc
+#        status_command ~/bin/conky-i3bar
+#        mode dock
+#        position bottom
+#        #tray_output LVDS1
+#        workspace_buttons yes
+#        colors {
+#          background #232323
+#          statusline #DCDCDC
+#          focused_workspace  #4c7899 #567DBB #ffffff
+#          active_workspace   #333333 #567DBB #ffffff
+#          inactive_workspace #333333 #5F676A #000000
+#          urgent_workspace   #2f343a #900000 #ffffff
+#        }
+#}
+
+# custom bar
+for_window [class="Gsimplecal"] floating enable
+for_window [class="Gsimplecal"] move absolute position 1660px 850px
+for_window [class="XTerm"] floating enable
+
 bar {
-        #status_command conky -c ~/.i3bar_conkyrc
-        status_command ~/bin/conky-i3bar
-        mode dock
-        position bottom
-        #tray_output LVDS1
-        workspace_buttons yes
-        colors {
-          background #232323
-          statusline #DCDCDC
-          focused_workspace  #4c7899 #567DBB #ffffff
-          active_workspace   #333333 #567DBB #ffffff
-          inactive_workspace #333333 #5F676A #000000
-          urgent_workspace   #2f343a #900000 #ffffff
-        }
+    position bottom
+#    status_command i3status --config ~/.i3/status
+    status_command ~/.i3/i3_bar_1.sh
+    colors{
+        background #232323
+        statusline #DCDCDC
+    }
 }
