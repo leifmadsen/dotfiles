@@ -1,0 +1,7 @@
+First, grab the .pcf font from this directory and place them into your
+/usr/share/X11/fonts/misc/ directory, then run the following commands:
+
+$ cd /usr/share/X11/fonts/misc/
+$ sudo chown root.root dos437.pcf
+$ sudo mkfontdir
+$ sudo xset fp rehash      # forces font to be avail immediately
