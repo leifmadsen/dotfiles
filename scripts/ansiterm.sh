@@ -1,3 +1,6 @@
+# this script comes from https://github.com/jcs/ansiterm
+# -- modified by me to use rxvt instead
+
 # colors 0-7 are black, red, green, yellow, blue, magenta, cyan, gray
 # colors 8-15 are bold versions
 
