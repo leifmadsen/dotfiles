@@ -8,8 +8,9 @@ general {
 order += "ipv6"
 order += "disk /"
 order += "run_watch DHCP"
-order += "run_watch VPN"
+#order += "run_watch VPN"
 order += "ethernet em1"
+order += "wireless wlp3s0"
 order += "battery 0"
 order += "cpu_temperature 0"
 order += "load"
@@ -20,6 +21,11 @@ ethernet em1 {
         # if you use %speed, i3status requires the cap_net_admin capability
         format_up = "E: %ip (%speed)"
         format_down = "E: down"
+}
+
+wireless wlp3s0 {
+        format_up = "W: (%quality at %essid, %bitrate) %ip"
+        format_down = "W: down"
 }
 
 battery 0 {
