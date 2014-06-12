@@ -28,6 +28,9 @@ set incsearch     " show search matches as you type
 set nobackup
 set modeline
 
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 filetype plugin indent on
 
 if &t_Co >= 256 || has("gui_running")
@@ -45,6 +48,11 @@ if has('autocmd')
   autocmd FileType html,xml set listchars-=tab:>.
   autocmd FileType ruby set expandtab|set shiftwidth=2|set tabstop=2
   autocmd Filetype diff set noexpandtab|set shiftwidth=4|set tabstop=4
+  autocmd Filetype *.c set noexpandtab|set shiftwidth=4|set tabstop=4
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+  autocmd BufWinLeave * call clearmatches()
 endif
 
 set pastetoggle=<F2>
