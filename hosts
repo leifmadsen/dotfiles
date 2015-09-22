@@ -3,4 +3,4 @@ localhost
 
 [local:vars]
 user=lmadsen
-home=/tmp/{{ user }}
+home=/home/{{ user }}
