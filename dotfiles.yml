@@ -8,7 +8,7 @@
     register: dotdirs
 
   - name: Create dotfile directories
-    file: path="{{ home }}/{{ item }}" mode=0700 state=directory recurse=true
+    file: path="{{ home }}/{{ item }}" mode=0700 state=directory
     with_items: dotdirs.stdout_lines
 
   - name: Enumerate dotfiles
