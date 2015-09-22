@@ -21,5 +21,5 @@ ${fs_used_perc /} \
 ${fs_used_perc /home} \
 ${if_up wlan0}${downspeedf wlan0} ${upspeedf wlan0} \
 ${else}down down${endif} \
-${if_up eth0}${downspeedf eth0} ${upspeedf eth0} \
+${if_up enp8s0}${downspeedf enp8s0} ${upspeedf enp8s0} \
 ${else}down down${endif}\
