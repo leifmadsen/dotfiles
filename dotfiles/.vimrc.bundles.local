@@ -1,0 +1,2 @@
+Bundle 'chase/vim-ansible-yaml'
+Bundle 'ekalinin/Dockerfile.vim'
