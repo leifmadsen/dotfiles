@@ -1,0 +1,20 @@
+# vim: filetype=ansible nospell
+---
+- hosts: local
+  connection: local
+  tasks:
+  - name: Enumerate dotfile dirs
+    shell: cd dotfiles && find -name ".*" -type d
+    register: dotdirs
+
+  - name: Create dotfile directories
+    file: path="{{ home }}/{{ item }}" mode=0700 state=directory recurse=true
+    with_items: dotdirs.stdout_lines
+
+  - name: Enumerate dotfiles
+    shell: cd dotfiles && find -name ".*" -type f
+    register: dotfiles
+
+  - name: Install dotfiles
+    copy: src="dotfiles/{{ item }}" dest="{{ home }}/{{ item }}" mode=0600 owner={{ user }} group={{ user }}
+    with_items: dotfiles.stdout_lines
