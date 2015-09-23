@@ -100,10 +100,10 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1:term
+bindsym $mod+Shift+1 move container to workspace 1:www
 bindsym $mod+Shift+2 move container to workspace 2:chat
 bindsym $mod+Shift+3 move container to workspace 3:media
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+4 move container to workspace 4:term
 bindsym $mod+Shift+5 move container to workspace 5:misc
 bindsym $mod+Shift+6 move container to workspace 6:gfx
 bindsym $mod+Shift+7 move container to workspace 7
@@ -168,27 +168,16 @@ bindsym $mod+Shift+i exec ~/.i3/i3_focus_or_run.sh -t weechat ~/bin/terminal wee
 # start dmenu (mod+x)
 bindsym $mod+x exec dmenu_run -fn "$ft" -nb "$back" -nf "$white" -sb "$yellow" -sf "$black"
 
+#assign application to workspace
+assign [class="Firefox"] media
+assign [class="Google-chrome"] www
+assign [class="Gimp"] gfx
+
 # auto-started applications on login
 exec --no-startup-id nm-applet
 exec --no-startup-id /opt/pa-applet/bin/pa-applet
 exec --no-startup-id "dropbox start &"
 #exec --no-startup-id pidgin
-exec --no-startup-id xset dpms 600 1200 1800 &   # set the screen timeout
-exec --no-startup-id xsetroot -solid "#333333"
-
-# setup the bell pings
-exec --no-startup-id xset b 15 200 150
-
-# protect the screen after 60 minutes
-exec --no-startup-id xset s off
-exec --no-startup-id xset dpms 3600 3600 3600
-
-# load up the fonts
-exec --no-startup-id xset fp+ $HOME/.fonts/misc
-exec --no-startup-id xset fp+ $HOME/.fonts/ohsnap
-exec --no-startup-id xset fp+ $HOME/.fonts/terminesspowerline
-exec --no-startup-id xset fp+ $HOME/.fonts/tewi
-
 exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Dark-pattern.jpg
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
 exec --no-startup-id gapcmon
