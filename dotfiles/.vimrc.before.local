@@ -2,4 +2,3 @@ let g:spf13_noninvasive_completion = 1
 let g:spf13_no_omni_complete = 1
 let g:spf13_bundle_groups=['general', 'programming', 'ruby', 'python', 'php', 'go', 'javascript', 'html', 'misc', ]
 let g:ansible_options = {'ignore_blank_lines': 0}
-set nospell
