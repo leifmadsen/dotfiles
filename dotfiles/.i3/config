@@ -88,10 +88,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1:term
+bindsym $mod+1 workspace 1:www
 bindsym $mod+2 workspace 2:chat
 bindsym $mod+3 workspace 3:media
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace 4:term
 bindsym $mod+5 workspace 5:misc
 bindsym $mod+6 workspace 6:gfx
 bindsym $mod+7 workspace 7
