@@ -169,9 +169,9 @@ bindsym $mod+Shift+i exec ~/.i3/i3_focus_or_run.sh -t weechat ~/bin/terminal wee
 bindsym $mod+x exec dmenu_run -fn "$ft" -nb "$back" -nf "$white" -sb "$yellow" -sf "$black"
 
 #assign application to workspace
-assign [class="Firefox"] media
-assign [class="Google-chrome"] www
-assign [class="Gimp"] gfx
+assign [class="Firefox"] 3:media
+assign [class="Google-chrome"] 1:www
+assign [class="Gimp"] 6:gfx
 
 # auto-started applications on login
 exec --no-startup-id nm-applet
