@@ -40,6 +40,12 @@ alias docker-stop-all='docker stop $(docker ps -q -a)'
 alias docker-rm-all='docker rm $(docker ps -q -a)'
 alias ccat='pygmentize -g'
 
+# Cambio colores de terminal
+alias col_dark="sh ~/.config/termcolours/dark.sh"
+alias col_light="sh ~/.config/termcolours/light.sh"
+alias col_default="sh ~/.config/termcolours/default.sh"
+
+
 # path setup
 PATH=$PATH:$GOPATH/bin
 export PATH
