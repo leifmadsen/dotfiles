@@ -7,7 +7,7 @@ xset b 15 200 150
 
 # protect the screen after 60 minutes
 xset s off
-xset dpms 3600 3600 3600
+xset dpms 600 1200 1800
 
 # load up the fonts
 xset fp+ $HOME/.fonts/misc

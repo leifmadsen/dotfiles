@@ -182,6 +182,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Dark-pattern.jpg
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
 exec --no-startup-id gapcmon
 exec --no-startup-id rescuetime     # time tracking software
+exec --no-startup-id stalonetray
 
 
 # Hybrid colors

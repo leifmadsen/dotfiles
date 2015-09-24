@@ -21,8 +21,8 @@ Xcursor.theme:	 Neutral
 !#include "/home/lmadsen/.config/termcolours/jellybeans"
 !#include "/home/lmadsen/.config/termcolours/hybrid"
 !#include "/home/lmadsen/.config/termcolours/base16-solarized.light"
-!#include "/home/lmadsen/.config/termcolours/hybrid_e7"
-#include "/home/lmadsen/.config/termcolours/solarized"
+#include "/home/lmadsen/.config/termcolours/hybrid_e7"
+!#include "/home/lmadsen/.config/termcolours/solarized"
 !#include "/home/lmadsen/.config/termcolours/s3r0"
 !#include "/home/lmadsen/.config/termcolours/nix_e7"
 
