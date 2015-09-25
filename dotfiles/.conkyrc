@@ -225,14 +225,14 @@ ${else}Sin montar ${endif}
 
 ${color grey90}ETHERNET ${color grey60}${hr 1}
 
-${color grey80}IP   : ${color LightBlue3}${addr eth0}
+${color grey80}IP   : ${color LightBlue3}${addr enp8s0}
 
-${color grey80}Bajada: ${color LightBlue3}${downspeed eth0} \
-${color grey80}Total: ${color LightBlue3}${totaldown eth0}
-${color grey60}${downspeedgraph eth0 20 78bce8 c8c800}
-${color grey80}Subida: ${color LightBlue3}${upspeed eth0} \
-${color grey80}Total: ${color LightBlue3}${totalup eth0}
-${color grey60}${upspeedgraph eth0 20 78bce8 c8c800}
+${color grey80}Bajada: ${color LightBlue3}${downspeed enp8s0} \
+${color grey80}Total: ${color LightBlue3}${totaldown enp8s0}
+${color grey60}${downspeedgraph enp8s0 20 78bce8 c8c800}
+${color grey80}Subida: ${color LightBlue3}${upspeed enp8s0} \
+${color grey80}Total: ${color LightBlue3}${totalup enp8s0}
+${color grey60}${upspeedgraph enp8s0 20 78bce8 c8c800}
 
 ${color grey90}WIFI ${color grey60}${hr 1}
 

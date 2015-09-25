@@ -1,0 +1,16 @@
+decorations none
+transparent false
+dockapp_mode none
+geometry 5x1-1920+0
+max_geometry 5x1-2020-0
+background "#1D1F21"
+kludges force_icons_size
+grow_gravity NE
+icon_gravity NE
+icon_size 12
+sticky true
+window_strut right
+window_type toolbar
+window_layer bottom
+no_shrink true
+skip_taskbar true
