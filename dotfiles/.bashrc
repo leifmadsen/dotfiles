@@ -45,6 +45,10 @@ alias col_dark="sh ~/.config/termcolours/dark.sh"
 alias col_light="sh ~/.config/termcolours/light.sh"
 alias col_default="sh ~/.config/termcolours/default.sh"
 
+alias vim=vimx
+
+export LOLCOMMITS_DIR=$HOME/Dropbox/Photos/lolcommits/
+export LOLCOMMITS_DEVICE=/dev/video0
 
 # path setup
 PATH=$PATH:$GOPATH/bin
