@@ -1,6 +1,0 @@
-[local]
-localhost
-
-[local:vars]
-user=lmadsen
-home=/home/{{ user }}
