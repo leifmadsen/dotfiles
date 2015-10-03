@@ -68,6 +68,10 @@ then
 			EXEC="weechat-curses"
 			TITLE="weechat"
 			;;
+        speedometer)
+            EXEC="speedometer-curses"
+            TITLE="speedometer"
+            ;;
 		*)
 			EXEC=$1
 			TITLE=$1
@@ -85,9 +89,10 @@ fi
 # TERMFUE -> Opción de fuente.
 # TERMCOL -> Opción del color de la fuente.
 
-TERMINAL="urxvt -title $TITLE"
-TERMEXEC="-e"
-TERMGEO="-g"
+#TERMINAL="uxrvt -title $TITLE"
+TERMINAL="gnome-terminal --hide-menubar"
+TERMEXEC="--command"
+TERMGEO="--geometry"
 TERMFONT="-letsp 0 -fn"
 TERMCOLOR="-fg"
 

@@ -1,0 +1,2 @@
+#!/bin/bash
+speedometer -r enp8s0 -t enp8s0
