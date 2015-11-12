@@ -14,6 +14,11 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 [ -e "${panel_fifo}" ] && rm "${panel_fifo}"
 mkfifo "${panel_fifo}"
 
+# setup the fonts
+xset fp+ $HOME/.fonts/misc
+xset fp+ $HOME/.fonts/ohsnap
+xset fp+ $HOME/.fonts/terminesspowerline
+
 ### EVENTS METERS
 
 # Window title, "WIN"
