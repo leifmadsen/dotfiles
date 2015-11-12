@@ -14,6 +14,7 @@ xset fp+ $HOME/.fonts/misc
 xset fp+ $HOME/.fonts/ohsnap
 xset fp+ $HOME/.fonts/terminesspowerline
 xset fp+ $HOME/.fonts/tewi
+fc-cache -v
 
 exec i3                            # start i3 without /etc/X11/Xsession.d/ goodies (dbus, gpg-agent, etc)
 #exec i3 >> ~/.i3/logfile           # start i3 with standard messages
