@@ -1,2 +1,9 @@
+set background=dark
 colorscheme molokai
 set nospell
+set wrap
+set virtualedit=block
+set autowrite
+set mouse=
+
+au BufRead,BufNewFile *.md,*.rst set sw=4 ts=4 expandtab textwidth=80
