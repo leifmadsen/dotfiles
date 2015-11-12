@@ -49,6 +49,7 @@ alias vim=vimx
 
 export LOLCOMMITS_DIR=$HOME/Dropbox/Photos/lolcommits/
 export LOLCOMMITS_DEVICE=/dev/video0
+export EDITOR="vim -f"
 
 # path setup
 PATH=$PATH:$GOPATH/bin
