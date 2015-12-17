@@ -177,10 +177,11 @@ assign [class="Gimp"] 6:gfx
 
 # auto-started applications on login
 exec --no-startup-id nm-applet
-exec --no-startup-id /opt/pa-applet/bin/pa-applet
+exec --no-startup-id /usr/local/bin/pa-applet
+exec --no-startup-id firewall-applet
 exec --no-startup-id "dropbox start &"
 #exec --no-startup-id pidgin
-exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Dark-pattern.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/4-Rock-Art.png
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
 exec --no-startup-id gapcmon
 exec --no-startup-id rescuetime     # time tracking software
