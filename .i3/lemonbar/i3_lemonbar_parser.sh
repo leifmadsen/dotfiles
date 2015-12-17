@@ -34,6 +34,8 @@ while read -r line ; do
       cpu="%{F${cpu_cback}}${sep_left}%{F${cpu_cicon} B${cpu_cback}} %{T2}${icon_cpu}%{F${cpu_cfore} T1} ${sys_arr[4]}%"
       # mem
       mem="%{F${cpu_cicon}}${sep_l_left} %{T2}${icon_mem}%{F${cpu_cfore} T1} ${sys_arr[5]}"
+      # battery
+      batt="%{F${cpu_cicon}}${sep_l_left} %{T2}${icon_batt}%{F${cpu_cfore} T1} ${sys_arr[12]}%"
       # disk /
       diskr="%{F${color_sec_b1}}${sep_left}%{F${color_icon} B${color_sec_b1}} %{T2}${icon_hd}%{F- T1} ${sys_arr[6]}%"
       # disk home
@@ -131,6 +133,6 @@ while read -r line ; do
   esac
 
   # And finally, output
-  printf "%s\n" "%{S+}%{l}${wsp}${title} %{r}${irc}${stab}${gmail}${stab}${cpu}${stab}${mem}${stab}${diskr}${stab}${diskh}${stab}${ethd}${stab}${ethu}${stab}${vol}${stab}${date}${stab}${time}"
+  printf "%s\n" "%{S+}%{l}${wsp}${title} %{r}${irc}${stab}${gmail}${stab}${cpu}${stab}${mem}${stab}${diskr}${stab}${diskh}${stab}${batt}${stab}${ethd}${stab}${ethu}${stab}${vol}${stab}${date}${stab}${time}"
   #printf "%s\n" "%{l}${wsp}${title}"
 done
