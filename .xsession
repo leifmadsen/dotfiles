@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 [[ -f $HOME/.Xresources  ]] && xrdb -merge $HOME/.Xresources
+[[ -f $HOME/.xprofile ]] && source $HOME/.xprofile
 
 # setup the bell pings
 xset b 15 200 150
