@@ -9,7 +9,7 @@
 # Ruta a los password
 . ~/.private/accounts
 
-MAIL=`curl -u $MAIL_USER:$MAIL_PASS --silent https://mail.google.com/mail/feed/atom`
+MAIL=`curl -u $MAIL_USER:"$MAIL_PASS" --silent https://mail.google.com/mail/feed/atom`
 CON=`echo $MAIL | grep -c "<fullcount>"`
 NUM=`echo $MAIL | grep -o "<entry>" | wc -l`
 RES="err"
