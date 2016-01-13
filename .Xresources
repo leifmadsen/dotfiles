@@ -11,7 +11,7 @@ Xft.rgba: rgb
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hinting: 1
-Xft.hintstyle: hintfull
+Xft.hintstyle: hintSlight
 
 Xcursor.theme:	 Neutral
 !*font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
