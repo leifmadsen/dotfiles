@@ -97,13 +97,20 @@ set $tag7 "7"
 set $tag8 "8"
 set $tag9 "9"
 
+workspace $tag1 output DP2-1
+workspace $tag2 output DP2-3
+workspace $tag3 output DP2-2
+workspace $tag4 output DP2-1
+workspace $tag5 output DP2-3
+workspace $tag6 output DP2-2
+
 # switch to workspace
-bindsym $mod+1 workspace $tag1 output DP2-1
-bindsym $mod+2 workspace $tag2 output DP2-3
-bindsym $mod+3 workspace $tag3 output DP2-2
-bindsym $mod+4 workspace $tag4 output DP2-1
-bindsym $mod+5 workspace $tag5 output DP2-3
-bindsym $mod+6 workspace $tag6 output DP2-2
+bindsym $mod+1 workspace $tag1
+bindsym $mod+2 workspace $tag2
+bindsym $mod+3 workspace $tag3
+bindsym $mod+4 workspace $tag4
+bindsym $mod+5 workspace $tag5
+bindsym $mod+6 workspace $tag6
 bindsym $mod+7 workspace $tag7
 bindsym $mod+8 workspace $tag8
 bindsym $mod+9 workspace $tag9
@@ -186,6 +193,7 @@ assign [class="Google-chrome"] 1:www
 assign [class="Gimp"] 6:gfx
 
 # auto-started applications on login
+exec --no-startup-id stalonetray
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/local/bin/pa-applet
 exec --no-startup-id firewall-applet
@@ -195,7 +203,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/4-Rock-Art.png
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
 exec --no-startup-id gapcmon
 exec --no-startup-id rescuetime     # time tracking software
-exec --no-startup-id stalonetray
+exec --no-startup-id liferea
 
 
 # Hybrid colors
