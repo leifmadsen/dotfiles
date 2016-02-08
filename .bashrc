@@ -48,6 +48,7 @@ alias col_default="sh ~/.config/termcolours/default.sh"
 export LOLCOMMITS_DIR=$HOME/Dropbox/Photos/lolcommits/
 export LOLCOMMITS_DEVICE=/dev/video2
 export EDITOR="vim"
+export TODO_DIR=$HOME/.config/todo/
 
 # path setup
 PATH=$PATH:$GOPATH/bin
