@@ -1,2 +1,4 @@
 Bundle 'chase/vim-ansible-yaml'
 Bundle 'ekalinin/Dockerfile.vim'
+Bundle 'pearofducks/ansible-vim'
+Bundle 'vim-airline/vim-airline-themes'
