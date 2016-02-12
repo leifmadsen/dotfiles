@@ -5,5 +5,4 @@ set wrap
 set virtualedit=block
 set autowrite
 set mouse=
-
-au BufRead,BufNewFile *.md,*.rst set sw=4 ts=4 expandtab textwidth=80
+set colorcolumn=80
