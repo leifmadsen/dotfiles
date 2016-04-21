@@ -14,7 +14,7 @@ if [ $? -eq 0 ]; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
-    . /usr/share/powerline/bash/powerline.sh
+    . ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 else
     . /usr/share/git-core/contrib/completion/git-prompt.sh
     . $HOME/.bashrc_ps1

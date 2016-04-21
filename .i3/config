@@ -31,11 +31,11 @@ bindsym $mod+Return exec gnome-terminal --tab
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -176,12 +176,12 @@ bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 
 # show a calendar
-bindsym $mod+c exec "/opt/gsimplecal/bin/gsimplecal"
+bindsym $mod+c exec "/usr/local/bin/gsimplecal"
 
 # htop (mod+winkey+h)
 bindsym $mod+Shift+h exec ~/.i3/i3_focus_or_run.sh -t htop ~/bin/terminal htop
 # xchat (mod+winkey+i)
-bindsym $mod+Shift+i exec ~/.i3/i3_focus_or_run.sh -t xchat
+bindsym $mod+Shift+i exec ~/.i3/i3_focus_or_run.sh -t hexchat
 # speedometer
 bindsym $mod+Shift+s exec ~/.i3/i3_focus_or_run.sh -t speedometer ~/bin/terminal speedometer
 # start dmenu (mod+x)
@@ -193,17 +193,16 @@ assign [class="Google-chrome"] 1:www
 assign [class="Gimp"] 6:gfx
 
 # auto-started applications on login
-exec --no-startup-id stalonetray
-exec --no-startup-id nm-applet
-exec --no-startup-id /usr/local/bin/pa-applet
+exec --no-startup-id stalonetray                    # standalone tray
+exec --no-startup-id nm-applet                      # network manager applet
+exec --no-startup-id /usr/local/bin/pa-applet       # audio applet
 exec --no-startup-id firewall-applet
 exec --no-startup-id "dropbox start &"
-#exec --no-startup-id pidgin
 exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/4-Rock-Art.png
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
-exec --no-startup-id gapcmon
-exec --no-startup-id rescuetime     # time tracking software
-exec --no-startup-id liferea
+exec --no-startup-id gapcmon        # UPS monitor
+exec --no-startup-id liferea        # RSS feed reader
+exec --no-startup-id redshift       # setup screen temps based on location and time of day
 
 
 # Hybrid colors
