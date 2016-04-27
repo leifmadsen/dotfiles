@@ -13,8 +13,8 @@ path="/dev/shm/measure-net-speed"
 #  find /sys/devices -name statistics
 # If you have more (or less) than two adapters, simply adjust the script here
 # and in the next block. 
-eth0="/sys/devices/pci0000:00/0000:00:1c.3/0000:08:00.0/net/enp8s0/statistics"
-wlan0="/sys/devices/pci0000:00/0000:00:1c.0/0000:05:00.0/net/wlp5s0/statistics"
+eth0="/sys/devices/pci0000:00/0000:00:19.0/net/enp0s25/statistics"
+wlan0="/sys/devices/pci0000:00/0000:00:1c.1/0000:03:00.0/net/wlp3s0/statistics"
 read eth0_rx < "${eth0}/rx_bytes"
 read eth0_tx < "${eth0}/tx_bytes"
 read wlan0_rx < "${wlan0}/rx_bytes"

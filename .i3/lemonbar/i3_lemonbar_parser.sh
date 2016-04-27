@@ -14,7 +14,8 @@ title="%{F${color_head} B${color_sec_b2}}${sep_right}%{F${color_head} B${color_s
 while read -r line ; do
   case $line in
     SYS*)
-      # conky=, 0 = wday, 1 = mday, 2 = month, 3 = time, 4 = cpu, 5 = mem, 6 = disk /, 7 = disk /home, 8-9 = up/down wlan, 10-11 = up/down eth, 12-13=speed
+      # conky=, 0 = wday, 1 = mday, 2 = month, 3 = time, 4 = cpu, 5 = mem, 6 = disk /, 7 = disk /home, 8-9 = up/down wlan, 10-11 = up/down eth, 12=bat
+      # SYSWed 27 Apr 15:09 2 1.13G 43 35 2.2 0.2 down down 66
       sys_arr=(${line#???})
       # date
       if [ ${res_w} -gt 1024 ]; then
@@ -133,6 +134,6 @@ while read -r line ; do
   esac
 
   # And finally, output
-  printf "%s\n" "%{S+}%{l}${wsp}${title} %{r}${irc}${stab}${gmail}${stab}${cpu}${stab}${mem}${stab}${diskr}${stab}${diskh}${stab}${batt}${stab}${ethd}${stab}${ethu}${stab}${vol}${stab}${date}${stab}${time}"
+  printf "%s\n" "%{S+}%{l}${wsp}${title} %{r}${irc}${stab}${gmail}${stab}${cpu}${stab}${mem}${stab}${diskr}${stab}${diskh}${stab}${batt}${stab}${wland}${stab}${wlanu}${stab}${ethd}${stab}${ethu}${stab}${vol}${stab}${date}${stab}${time}"
   #printf "%s\n" "%{l}${wsp}${title}"
 done
