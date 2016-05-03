@@ -7,3 +7,5 @@ au BufRead,BufNewFile *.md,*.rst set sw=4 ts=4 expandtab textwidth=79
 
 au FileType gitcommit set tw=70
 au BufRead,BufNewFile */COMMIT_EDITMSG set tw=70
+
+com! FormatJSON %!python -m json.tool

@@ -1,7 +1,8 @@
 {
-	"ext": {
-		"shell": {
-			"theme": "custom_leftonly"
-		}
-	}
+    "ext": {
+        "shell": {
+            "colorscheme": "default",
+            "theme": "custom_leftonly"
+        }
+    }
 }
