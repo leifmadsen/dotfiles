@@ -3,9 +3,10 @@
 loc=$1
 
 if [ "$loc" = "desk" ] ; then
-	xrandr --output VGA1 --auto --right-of HDMI1
-	xrandr --output LVDS1 --off
-	xrandr --output HDMI1 --auto --left-of VGA1
+    xrandr --output eDP1 --off
+	xrandr --output DP2-2 --auto --right-of DP2-3
+	xrandr --output DP2-1 --auto --left-of DP2-3
+	xrandr --output DP2-3 --auto --left-of DP2-2
 elif [ "$loc" = "laptop" ] ; then
 	xrandr --output VGA1 --off
 	xrandr --output LVDS1 --auto

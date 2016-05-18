@@ -229,8 +229,8 @@ hide_edge_borders both
 
 # hide titlebars except when in tabs or stacked mode
 #new_window none
-new_window pixel 2
-new_float pixel 2
+new_window pixel 0
+new_float pixel 0
 
 # my font
 #font pango: Inconsolata Medium 9
