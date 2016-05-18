@@ -1,0 +1,34 @@
+#!/bin/sh -xe
+# Copyright 2015 Red Hat, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+xrandr > /dev/null
+xrandr | grep DP2-1 | grep " connected " > /dev/null
+if [ $? -eq 0 ]; then
+    # On the docking station, 3 external monitors
+    xrandr --output eDP1 --off
+    sleep 2
+    xrandr --output DP2-1 --off
+    xrandr --output DP2-2 --off
+    xrandr --output DP2-3 --off
+    sleep 2
+    xrandr --output DP2-1 --auto
+    sleep 2
+    xrandr --output DP2-3 --right-of DP2-1 --auto
+    sleep 2
+    xrandr --output DP2-2 --right-of DP2-3 --auto
+else
+    # Just using the laptop display
+    xrandr --output DP2-1 --off --output eDP2 --auto --output DP2-2 --off --output DP2-3 --off
+fi
