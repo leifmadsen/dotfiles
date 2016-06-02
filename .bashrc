@@ -39,6 +39,7 @@ alias matrix='tr -c "[:xdigit:]" " " < /dev/urandom | pv -L 10k | dd cbs=$COLUMN
 alias docker-stop-all='docker stop $(docker ps -q -a)'
 alias docker-rm-all='docker rm $(docker ps -q -a)'
 alias ccat='pygmentize -g'
+alias pastebin='nc termbin.com 9999'
 
 # Cambio colores de terminal
 alias col_dark="sh ~/.config/termcolours/dark.sh"
@@ -49,6 +50,10 @@ export LOLCOMMITS_DIR=$HOME/Dropbox/Photos/lolcommits/
 export LOLCOMMITS_DEVICE=/dev/video0
 export EDITOR="vim"
 export TODO_DIR=$HOME/.config/todo/
+
+# Depends on 'dnf install source-hightlight'
+export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+export LESS=" -R "
 
 # path setup
 PATH=$PATH:$GOPATH/bin
