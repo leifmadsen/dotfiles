@@ -9,6 +9,7 @@ Configuration files found in the home directory. Desktop environment includes:
 - [dunstrc](https://github.com/knopwob/dunst)
 - [stalonetray](http://stalonetray.sourceforge.net/)
 - [spf13-vim](https://github.com/spf13/spf13-vim)
+- [gogh](https://github.com/Mayccoll/Gogh)
 
 Configuration borrows heavily from [electro7/dotfiles](https://github.com/electro7/dotfiles).
 
