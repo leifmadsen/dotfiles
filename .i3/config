@@ -104,6 +104,8 @@ workspace $tag4 output DP2-1
 workspace $tag5 output DP2-3
 workspace $tag6 output DP2-2
 
+
+
 # switch to workspace
 bindsym $mod+1 workspace $tag1
 bindsym $mod+2 workspace $tag2
@@ -127,6 +129,17 @@ bindsym $mod+Shift+7 move container to workspace $tag7
 bindsym $mod+Shift+8 move container to workspace $tag8
 bindsym $mod+Shift+9 move container to workspace $tag9
 bindsym $mod+Shift+0 move container to workspace $tag10
+
+#bindsym $mod+Shift+1 exec --no-startup-id ~/.config/i3/switch-workspace.py $tag1
+#bindsym $mod+Shift+2 exec --no-startup-id ~/.config/i3/switch-workspace.py $tag2
+#bindsym $mod+Shift+3 exec --no-startup-id ~/.config/i3/switch-workspace.py $tag3
+#bindsym $mod+Shift+4 exec --no-startup-id ~/.config/i3/switch-workspace.py $tag4
+#bindsym $mod+Shift+5 exec --no-startup-id ~/.config/i3/switch-workspace.py $tag5
+#bindsym $mod+Shift+6 exec --no-startup-id ~/.config/i3/switch-workspace.py $tag6
+#bindsym $mod+Shift+7 exec --no-startup-id ~/.config/i3/switch-workspace.py $tag7
+#bindsym $mod+Shift+8 exec --no-startup-id ~/.config/i3/switch-workspace.py $tag8
+#bindsym $mod+Shift+9 exec --no-startup-id ~/.config/i3/switch-workspace.py $tag9
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -181,7 +194,7 @@ bindsym $mod+c exec "/usr/local/bin/gsimplecal"
 # htop (mod+winkey+h)
 bindsym $mod+Shift+h exec ~/.i3/i3_focus_or_run.sh -t htop ~/bin/terminal htop
 # xchat (mod+winkey+i)
-bindsym $mod+Shift+i exec ~/.i3/i3_focus_or_run.sh -t hexchat
+bindsym $mod+Shift+i exec ~/.i3/i3_focus_or_run.sh -t weechat
 # speedometer
 bindsym $mod+Shift+s exec ~/.i3/i3_focus_or_run.sh -t speedometer ~/bin/terminal speedometer
 # start dmenu (mod+x)
@@ -204,6 +217,7 @@ exec --no-startup-id gapcmon        # UPS monitor
 exec --no-startup-id liferea        # RSS feed reader
 exec --no-startup-id redshift       # setup screen temps based on location and time of day
 exec --no-startup-id xfce4-power-manager    # enable power management
+exec --no-startup-id rescuetime
 
 
 # Hybrid colors
@@ -218,7 +232,7 @@ set $darkred            #A54242
 set $green              #B5BD56
 
 #class                  border      backgr.     text        split
-client.focused          $green      $green       $black      $red
+client.focused          $lightgrey  $lightgrey  $black      $red
 client.focused_inactive $grey       $grey       $lightgrey  $grey
 client.unfocused        $grey       $grey       $lightgrey  $grey
 client.urgent           $red        $red        $black      $red
@@ -229,8 +243,8 @@ hide_edge_borders both
 
 # hide titlebars except when in tabs or stacked mode
 #new_window none
-new_window pixel 0
-new_float pixel 0
+new_window pixel 1
+new_float pixel 1
 
 # my font
 #font pango: Inconsolata Medium 9
