@@ -194,7 +194,7 @@ bindsym $mod+c exec "/usr/local/bin/gsimplecal"
 # htop (mod+winkey+h)
 bindsym $mod+Shift+h exec ~/.i3/i3_focus_or_run.sh -t htop ~/bin/terminal htop
 # xchat (mod+winkey+i)
-bindsym $mod+Shift+i exec ~/.i3/i3_focus_or_run.sh -t weechat
+bindsym $mod+Shift+i exec ~/.i3/i3_focus_or_run.sh -t weechat ~/bin/terminal weechat
 # speedometer
 bindsym $mod+Shift+s exec ~/.i3/i3_focus_or_run.sh -t speedometer ~/bin/terminal speedometer
 # start dmenu (mod+x)
