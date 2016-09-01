@@ -97,18 +97,6 @@ while read -r line ; do
       fi
       irc="%{F${irc_cback}}${sep_left}%{F${irc_cicon} B${irc_cback}} %{T2}${icon_chat}%{F${irc_cfore} T1} ${irc_n_high} %{F${irc_cicon}}${sep_l_left} %{T2}${icon_contact}%{F${irc_cfore} T1} ${irc_high}"
       ;;
-    MPD*)
-      # Music
-      mpd_arr=(${line#???})
-      if [ -z "${line#???}" ]; then
-        song="none";
-      elif [ "${mpd_arr[0]}" == "error:" ]; then
-        song="mpd off";
-      else
-        song="${line#???}";
-      fi
-      mpd="%{F${color_sec_b2}}${sep_left}%{B${color_sec_b2}}%{F${color_sec_b1}}${sep_left}%{F${color_icon} B${color_sec_b1}} %{T2}${icon_music}%{F${color_fore} T1}  ${song}"
-      ;;
     WSP*)
       # I3 Workspaces
       wsp="%{F${color_back} B${color_head}} %{T2}${icon_wsp}%{T1}"
