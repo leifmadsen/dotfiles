@@ -58,3 +58,6 @@ export LESS=" -R "
 # path setup
 PATH=$PATH:$GOPATH/bin
 export PATH
+
+# added by travis gem
+[ -f /home/lmadsen/.travis/travis.sh ] && source /home/lmadsen/.travis/travis.sh
