@@ -218,6 +218,7 @@ exec --no-startup-id liferea        # RSS feed reader
 exec --no-startup-id redshift       # setup screen temps based on location and time of day
 exec --no-startup-id xfce4-power-manager    # enable power management
 exec --no-startup-id rescuetime
+#exec --no-startup-id synergy
 
 
 # Hybrid colors

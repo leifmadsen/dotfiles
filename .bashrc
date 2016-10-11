@@ -46,10 +46,15 @@ alias col_dark="sh ~/.config/termcolours/dark.sh"
 alias col_light="sh ~/.config/termcolours/light.sh"
 alias col_default="sh ~/.config/termcolours/default.sh"
 
+# Gertty
+alias gertty-opnfv="gertty -c ~/.gertty-opnfv.yaml"
+alias gertty-stack="gertty -c ~/.gertty.yaml"
+
 export LOLCOMMITS_DIR=$HOME/Dropbox/Photos/lolcommits/
 export LOLCOMMITS_DEVICE=/dev/video1
 export EDITOR="vim"
 export TODO_DIR=$HOME/.config/todo/
+export XDG_CONFIG_DIR=$HOME/.config
 
 # Depends on 'dnf install source-hightlight'
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
