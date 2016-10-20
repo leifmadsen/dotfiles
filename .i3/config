@@ -87,12 +87,12 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $tag1 "1:www"
-set $tag2 "2:chat"
+set $tag1 "1:chat"
+set $tag2 "2:www"
 set $tag3 "3:media"
-set $tag4 "4:term"
-set $tag5 "5:misc"
-set $tag6 "6:gfx"
+set $tag4 "4"
+set $tag5 "5"
+set $tag6 "6"
 set $tag7 "7"
 set $tag8 "8"
 set $tag9 "9"
@@ -202,7 +202,7 @@ bindsym $mod+x exec dmenu_run -fn "$ft" -nb "$back" -nf "$white" -sb "$yellow" -
 
 #assign application to workspace
 assign [class="Firefox"] 3:media
-assign [class="Google-chrome"] 1:www
+assign [class="Google-chrome"] 2:www
 assign [class="Gimp"] 6:gfx
 
 # auto-started applications on login
