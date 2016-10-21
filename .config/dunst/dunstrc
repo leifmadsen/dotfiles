@@ -194,6 +194,11 @@
 #    summary = "foobar"
 #    format = ""
 
+[calendar_alert]
+    appname = gcalcli
+    script  = /home/lmadsen/bin/alert.sh
+    urgency = critical
+
 [signed_on]
     appname = Pidgin
     summary = "*signed on*"
