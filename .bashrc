@@ -40,6 +40,8 @@ alias docker-stop-all='docker stop $(docker ps -q -a)'
 alias docker-rm-all='docker rm $(docker ps -q -a)'
 alias ccat='pygmentize -g'
 alias pastebin='nc termbin.com 9999'
+alias t='todo.sh'
+complete -F _todo t
 
 # Cambio colores de terminal
 alias col_dark="sh ~/.config/termcolours/dark.sh"
