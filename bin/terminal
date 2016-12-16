@@ -54,6 +54,7 @@ then
 			EXEC="mutt"
 			TITLE="mutt"
 			GEO="90x30"
+            THEME="SolarizedDark"
 			;;
 		log)
 			EXEC="colorlog /var/log/syslog"
@@ -71,6 +72,10 @@ then
         speedometer)
             EXEC="speedometer-curses"
             TITLE="speedometer"
+            ;;
+        profanity)
+            EXEC="profanity"
+            TITLE="slack"
             ;;
 		*)
 			EXEC=$1
@@ -90,11 +95,12 @@ fi
 # TERMCOL -> Opción del color de la fuente.
 
 #TERMINAL="uxrvt -title $TITLE"
-TERMINAL="gnome-terminal --hide-menubar"
+TERMINAL="gnome-terminal --hide-menubar --name $TITLE"
 TERMEXEC="--command"
 TERMGEO="--geometry"
 TERMFONT="-letsp 0 -fn"
 TERMCOLOR="-fg"
+TERMTHEME="--profile"
 
 # Comprobación de las variables
 
@@ -102,6 +108,7 @@ if [ "$EXEC" != "" ] ; then EXEC="$TERMEXEC $EXEC" ; fi
 if [ "$GEO" != "" ] ; then GEO="$TERMGEO $GEO" ; fi
 if [ "$FONT" != "" ] ; then FONT="$TERMFONT $FONT" ; fi
 if [ "$COLOR" != "" ] ; then COLOR="$TERMCOLOR $COLOR" ; fi
+if [ "$THEME" != "" ] ; then THEME="$TERMTHEME $THEME" ; fi
 
 if [ $# -gt 1 ] ; then PARAM="$2 $3 $4 $5 $6 $7 $8 $9";	fi
 

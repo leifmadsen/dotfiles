@@ -6,7 +6,10 @@
 #
 # No parameters -> Reset highlight
 
-. ~/.i3/lemonbar/i3_lemonbar_config
+#. ~/.i3/lemonbar/i3_lemonbar_config
+
+panel_fifo="/tmp/i3_lemonbar_${USER}"
+
 
 # No pipe, Conky running > plain file
 if [ ! -e "${panel_fifo}" ] ; then

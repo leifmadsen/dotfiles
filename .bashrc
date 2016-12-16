@@ -40,8 +40,6 @@ alias docker-stop-all='docker stop $(docker ps -q -a)'
 alias docker-rm-all='docker rm $(docker ps -q -a)'
 alias ccat='pygmentize -g'
 alias pastebin='nc termbin.com 9999'
-alias t='todo.sh'
-complete -F _todo t
 
 # Cambio colores de terminal
 alias col_dark="sh ~/.config/termcolours/dark.sh"
@@ -52,11 +50,16 @@ alias col_default="sh ~/.config/termcolours/default.sh"
 alias gertty-opnfv="gertty -c ~/.gertty-opnfv.yaml"
 alias gertty-stack="gertty -c ~/.gertty.yaml"
 
+# firewall
+alias fw="sudo firewall-cmd"
+
 export LOLCOMMITS_DIR=$HOME/Dropbox/Photos/lolcommits/
 export LOLCOMMITS_DEVICE=/dev/video1
+export LOLCOMMITS_FORK=true
+export LOLCOMMITS_STEALTH=true
 export EDITOR="vim"
-export TODO_DIR=$HOME/.config/todo/
-export XDG_CONFIG_DIR=$HOME/.config
+export XDG_CONFIG_DIRS=$HOME/.config
+export TASKDDATA=$HOME/.config/taskd
 
 # Depends on 'dnf install source-hightlight'
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"

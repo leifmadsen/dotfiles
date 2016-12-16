@@ -1,9 +1,13 @@
 let g:airline_powerline_fonts = 1
-let g:spf13_bundle_groups=['general', 'programming', 'ruby', 'python', 'php', 'go', 'javascript', 'html', 'misc', 'writing', 'puppet']
+let g:spf13_bundle_groups=['general', 'programming', 'ruby', 'python', 'go', 'javascript', 'html', 'misc', 'writing', 'puppet']
 let g:ansible_options = {'ignore_blank_lines': 0}
+let g:spf13_no_autochdir=1
+let g:spf13_wrapRelMotion=1
+let g:syntastic_python_checkers = ["flake8"]
 
 au BufRead,BufNewFile *.py,*.pyw set sw=4 ts=4 expandtab textwidth=79
-au BufRead,BufNewFile *.md,*.rst set sw=4 ts=4 expandtab textwidth=79
+au BufRead,BufNewFile *.markdown,*.md,*.rst set sw=4 ts=4 expandtab textwidth=79
+au BufRead,BufNewFile *.markdown,*.md,*.rst let g:auto_save=1
 
 au FileType gitcommit set tw=70
 au BufRead,BufNewFile */COMMIT_EDITMSG set tw=70

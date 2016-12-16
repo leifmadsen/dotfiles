@@ -87,9 +87,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $tag1 "1:chat"
-set $tag2 "2:www"
-set $tag3 "3:media"
+set $tag1 "1:social"
+set $tag2 "2:term"
+set $tag3 "3:www"
 set $tag4 "4"
 set $tag5 "5"
 set $tag6 "6:gfx"
@@ -97,12 +97,12 @@ set $tag7 "7"
 set $tag8 "8"
 set $tag9 "9"
 
-workspace $tag1 output DP2-1
+workspace $tag1 output DP2-2
 workspace $tag2 output DP2-3
-workspace $tag3 output DP2-2
-workspace $tag4 output DP2-1
+workspace $tag3 output DP2-1
+workspace $tag4 output DP2-2
 workspace $tag5 output DP2-3
-workspace $tag6 output DP2-2
+workspace $tag6 output DP2-1
 
 
 
@@ -197,12 +197,16 @@ bindsym $mod+Shift+h exec ~/.i3/i3_focus_or_run.sh -t htop ~/bin/terminal htop
 bindsym $mod+Shift+i exec ~/.i3/i3_focus_or_run.sh -t weechat ~/bin/terminal weechat
 # speedometer
 bindsym $mod+Shift+s exec ~/.i3/i3_focus_or_run.sh -t speedometer ~/bin/terminal speedometer
+# neomutt
+bindsym $mod+Shift+m exec ~/.i3/i3_focus_or_run.sh -t mutt ~/bin/terminal mutt
+# profanity
+bindsym $mod+p exec ~/.i3/i3_focus_or_run.sh -t profanity ~/bin/terminal profanity
 # start dmenu (mod+x)
 bindsym $mod+x exec dmenu_run -fn "$ft" -nb "$back" -nf "$white" -sb "$yellow" -sf "$black"
 
 #assign application to workspace
-assign [class="Firefox"] 3:media
-assign [class="Google-chrome"] 2:www
+assign [class="Firefox"] 3:www
+assign [class="Google-chrome"] 3:www
 assign [class="Gimp"] 6:gfx
 
 # auto-started applications on login
@@ -228,12 +232,13 @@ set $grey               #373B41
 set $lightgrey          #707880
 set $white              #C5C8C6
 set $yellow             #F0C674
+set $border             #B58900
 set $red                #CC6666
 set $darkred            #A54242
 set $green              #B5BD56
 
 #class                  border      backgr.     text        split
-client.focused          $lightgrey  $lightgrey  $black      $red
+client.focused          $border  $lightgrey  $black      $red
 client.focused_inactive $grey       $grey       $lightgrey  $grey
 client.unfocused        $grey       $grey       $lightgrey  $grey
 client.urgent           $red        $red        $black      $red
