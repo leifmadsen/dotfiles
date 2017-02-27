@@ -8,9 +8,9 @@ if [ "$loc" = "desk" ] ; then
     xrandr --output DP2-3 --off
     xrandr --output DP2-2 --off
     sleep 1
-    xrandr --output DP2-1 --auto --primary #--crtc 1
-    xrandr --output DP2-3 --auto --right-of DP2-1 #--crtc 2
-    xrandr --output DP2-2 --auto --right-of DP2-3
+    xrandr --output DP2-2 --auto --primary #--crtc 1
+    xrandr --output DP2-3 --auto --right-of DP2-2 #--crtc 2
+    xrandr --output DP2-1 --auto --right-of DP2-3
 elif [ "$loc" = "laptop" ] ; then
     xrandr --output DP2-1 --off
     xrandr --output DP2-2 --off
