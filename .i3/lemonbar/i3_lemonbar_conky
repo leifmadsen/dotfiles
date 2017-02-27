@@ -1,26 +1,28 @@
-# Conky for external bar 
-# out simple text to console
+# Conky for external bar
 
-background no
-update_interval 2
-total_run_times 0
-override_utf8_locale yes
-short_units yes
-uppercase no
-out_to_console yes
-out_to_x no
-if_up_strictness address
-format_human_readable true
+conky.config = {
+    background = false,
+    update_interval = 2,
+    total_run_times = 0,
+    override_utf8_locale = true,
+    short_units = true,
+    uppercase = false,
+    out_to_console = true,
+    out_to_x = false,
+    if_up_strictness = address,
+    format_human_readable = true,
+}
 
-TEXT
-SYS\
-${time %a %d %b %H:%M} \
-${cpu} \
-${mem} \
-${fs_used_perc /} \
-${fs_used_perc /home} \
-${if_up wlp3s0}${downspeedf wlp3s0} ${upspeedf wlp3s0} \
-${else}down down ${endif}\
-${if_up br0}${downspeedf br0} ${upspeedf br0} \
-${else}down down ${endif}\
-${battery_percent BAT0} \
+conky.text = [[
+    SYS\
+    ${time %a %d %b %H:%M} \
+    ${cpu} \
+    ${mem} \
+    ${fs_used_perc /} \
+    ${fs_used_perc /home} \
+    ${if_up wlp3s0}${downspeedf wlp3s0} ${upspeedf wlp3s0} \
+    ${else}down down ${endif}\
+    ${if_up br0}${downspeedf br0} ${upspeedf br0} \
+    ${else}down down ${endif}\
+    ${battery_percent BAT0} \
+]]
