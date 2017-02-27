@@ -53,17 +53,26 @@ alias gertty-stack="gertty -c ~/.gertty.yaml"
 # firewall
 alias fw="sudo firewall-cmd"
 
+# lolcommits
 export LOLCOMMITS_DIR=$HOME/Dropbox/Photos/lolcommits/
-export LOLCOMMITS_DEVICE=/dev/video1
+export LOLCOMMITS_DEVICE=/dev/video2
 export LOLCOMMITS_FORK=true
 export LOLCOMMITS_STEALTH=true
+
 export EDITOR="vim"
 export XDG_CONFIG_DIRS=$HOME/.config
 export TASKDDATA=$HOME/.config/taskd
 
+# add atom.io alias using docker
+alias atom="docker run --privileged -ti --rm -e DISPLAY=$DISPLAY -v ~/.atom:/home/developer/.atom -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/src:/home/developer/src leifmadsen/atom.io"
+
 # Depends on 'dnf install source-hightlight'
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R "
+
+# starred repo token
+source ~/.private/tokens/github_starred_token
+alias build_starred="starred --username leifmadsen --repository awesome-stars --sort"
 
 # path setup
 PATH=$PATH:$GOPATH/bin
