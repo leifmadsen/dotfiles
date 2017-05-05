@@ -6,3 +6,6 @@ set virtualedit=block
 set autowrite
 set mouse=
 set colorcolumn=80
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*

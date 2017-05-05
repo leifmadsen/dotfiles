@@ -62,6 +62,7 @@ export LOLCOMMITS_STEALTH=true
 export EDITOR="vim"
 export XDG_CONFIG_DIRS=$HOME/.config
 export TASKDDATA=$HOME/.config/taskd
+export NOTES_DIRECTORY=$HOME/.notes/
 
 # add atom.io alias using docker
 alias atom="docker run --privileged -ti --rm -e DISPLAY=$DISPLAY -v ~/.atom:/home/developer/.atom -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/src:/home/developer/src leifmadsen/atom.io"
@@ -69,6 +70,9 @@ alias atom="docker run --privileged -ti --rm -e DISPLAY=$DISPLAY -v ~/.atom:/hom
 # Depends on 'dnf install source-hightlight'
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R "
+
+# GHI (GitHub Issues CLI client)
+source ~/.private/tokens/ghi
 
 # starred repo token
 source ~/.private/tokens/github_starred_token

@@ -4,6 +4,10 @@ let g:ansible_options = {'ignore_blank_lines': 0}
 let g:spf13_no_autochdir=1
 let g:spf13_wrapRelMotion=1
 let g:syntastic_python_checkers = ["flake8"]
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 au BufRead,BufNewFile *.py,*.pyw set sw=4 ts=4 expandtab textwidth=79
 au BufRead,BufNewFile *.markdown,*.md,*.rst set sw=4 ts=4 expandtab textwidth=79
