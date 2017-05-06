@@ -1,5 +1,5 @@
 #!/bin/bash
-icon="$HOME/bin/i3lock/lock-icon.png"
+icon="$HOME/bin/lock-icon.png"
 tmpbg='/tmp/screen.png'
 
 (( $# )) && { icon=$1; }
