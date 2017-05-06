@@ -180,7 +180,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # lock the screen
-bindsym $mod+Shift+x exec "i3lock -c 111111"
+bindsym $mod+Shift+x exec sh ~/bin/i3lock/lock
 
 # scrot & gimp - root
 bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
