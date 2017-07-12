@@ -64,6 +64,9 @@ export XDG_CONFIG_DIRS=$HOME/.config
 export TASKDDATA=$HOME/.config/taskd
 export NOTES_DIRECTORY=$HOME/.notes/
 
+# kubernetes
+export KUBECONFIG=cluster-merge:$HOME/.kube/minikube:$HOME/.kube/kube-master.management.61will.space
+
 # add atom.io alias using docker
 alias atom="docker run --privileged -ti --rm -e DISPLAY=$DISPLAY -v ~/.atom:/home/developer/.atom -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/src:/home/developer/src leifmadsen/atom.io"
 
@@ -84,3 +87,4 @@ export PATH
 
 # added by travis gem
 [ -f /home/lmadsen/.travis/travis.sh ] && source /home/lmadsen/.travis/travis.sh
+source <(kubectl completion bash)
