@@ -14,3 +14,4 @@ window_type toolbar
 window_layer bottom
 no_shrink true
 skip_taskbar true
+display :0
