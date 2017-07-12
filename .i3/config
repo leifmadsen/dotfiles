@@ -97,12 +97,12 @@ set $tag7 "7"
 set $tag8 "8"
 set $tag9 "9"
 
-workspace $tag1 output DP2-2
-workspace $tag2 output DP2-3
-workspace $tag3 output DP2-1
-workspace $tag4 output DP2-2
-workspace $tag5 output DP2-3
-workspace $tag6 output DP2-1
+workspace $tag1 output DP2-1
+workspace $tag2 output DP2-2
+workspace $tag3 output DP2-3
+workspace $tag4 output DP2-1
+workspace $tag5 output DP2-2
+workspace $tag6 output DP2-3
 
 
 
@@ -205,9 +205,9 @@ bindsym $mod+p exec ~/.i3/i3_focus_or_run.sh -t profanity ~/bin/terminal profani
 bindsym $mod+x exec dmenu_run -fn "$ft" -nb "$back" -nf "$white" -sb "$yellow" -sf "$black"
 
 #assign application to workspace
-assign [class="Firefox"] 3:www
-assign [class="Google-chrome"] 3:www
-assign [class="Gimp"] 6:gfx
+assign [class="Firefox"] $tag2
+assign [class="Google-chrome"] $tag2
+assign [class="Gimp"] $tag6
 
 # auto-started applications on login
 exec --no-startup-id stalonetray                    # standalone tray
@@ -222,7 +222,7 @@ exec --no-startup-id liferea        # RSS feed reader
 exec --no-startup-id redshift       # setup screen temps based on location and time of day
 exec --no-startup-id xfce4-power-manager    # enable power management
 exec --no-startup-id rescuetime
-exec --no-startup-id synergy
+#exec --no-startup-id synergy
 
 
 # Hybrid colors
@@ -238,7 +238,7 @@ set $darkred            #A54242
 set $green              #B5BD56
 
 #class                  border      backgr.     text        split
-client.focused          $border  $lightgrey  $black      $red
+client.focused          $border     $lightgrey  $black      $red
 client.focused_inactive $grey       $grey       $lightgrey  $grey
 client.unfocused        $grey       $grey       $lightgrey  $grey
 client.urgent           $red        $red        $black      $red

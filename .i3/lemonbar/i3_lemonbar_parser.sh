@@ -122,6 +122,14 @@ while read -r line ; do
   esac
 
   # And finally, output
-  printf "%s\n" "%{S+}%{l}${wsp}${title} %{r}${irc}${stab}${gmail}${stab}${cpu}${stab}${mem}${stab}${diskr}${stab}${diskh}${stab}${batt}${stab}${wland}${stab}${wlanu}${stab}${ethd}${stab}${ethu}${stab}${vol}${stab}${date}${stab}${time}"
+  #printf "%s\n" "%{S+}%{l}${wsp}${title} %{r}${irc}${stab}${gmail}${stab}${cpu}${stab}${mem}${stab}${diskr}${stab}${diskh}${stab}${batt}${stab}${wland}${stab}${wlanu}${stab}${ethd}${stab}${ethu}${stab}${vol}${stab}${date}${stab}${time}"
   #printf "%s\n" "%{l}${wsp}${title}"
+  bar="$(printf '%s\n' "%{l}${wsp}${title} %{r}${mpd}${stab}${irc}${stab}${gmail}${stab}${cpu}${stab}${mem}${stab}${diskr}${stab}${diskh}${stab}${wland}${stab}${wlanu}${stab}${ethd}${stab}${ethu}${stab}${vol}${stab}${date}${stab}${time}")"
+
+  out=""
+  mcount="$(xrandr --listactivemonitors | head -1 | awk '{print $2}')"
+  for i in $(seq 0 $((mcount -1))); do
+      out+="%{S$i}$bar"
+  done
+  echo "$out"
 done
