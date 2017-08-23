@@ -9,15 +9,23 @@ fi
 # export SYSTEMD_PAGER=
 
 # if powerline is installed, then use it
-command -v powerline-daemon &>/dev/null
-if [ $? -eq 0 ]; then
-    powerline-daemon -q
-    POWERLINE_BASH_CONTINUATION=1
-    POWERLINE_BASH_SELECT=1
-    . ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
-else
-    . /usr/share/git-core/contrib/completion/git-prompt.sh
-    . $HOME/.bashrc_ps1
+#command -v powerline-daemon &>/dev/null
+#if [ $? -eq 0 ]; then
+#    powerline-daemon -q
+#    POWERLINE_BASH_CONTINUATION=1
+#    POWERLINE_BASH_SELECT=1
+#    . ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+#else
+#    . /usr/share/git-core/contrib/completion/git-prompt.sh
+#    . $HOME/.bashrc_ps1
+#fi
+
+function _update_ps1() {
+    PS1="$(~/.powerline/powerline-go -error $? -colorize-hostname)"
+}
+
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
 # agent setup
@@ -40,6 +48,7 @@ alias docker-stop-all='docker stop $(docker ps -q -a)'
 alias docker-rm-all='docker rm $(docker ps -q -a)'
 alias ccat='pygmentize -g'
 alias pastebin='nc termbin.com 9999'
+alias git=hub
 
 # Cambio colores de terminal
 alias col_dark="sh ~/.config/termcolours/dark.sh"
@@ -63,6 +72,9 @@ export EDITOR="vim"
 export XDG_CONFIG_DIRS=$HOME/.config
 export TASKDDATA=$HOME/.config/taskd
 export NOTES_DIRECTORY=$HOME/.notes/
+
+# ansible
+alias playbook=ansible-playbook
 
 # kubernetes
 export KUBECONFIG=cluster-merge:$HOME/.kube/minikube:$HOME/.kube/kube-master.management.61will.space
