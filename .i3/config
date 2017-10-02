@@ -97,15 +97,15 @@ set $tag7 "7"
 set $tag8 "8"
 set $tag9 "9"
 
-workspace $tag1 output DP2-1
-workspace $tag2 output DP2-2
-workspace $tag3 output DP2-3
-workspace $tag4 output DP2-1
-workspace $tag5 output DP2-2
-workspace $tag6 output DP2-3
-workspace $tag7 output DP2-1
-workspace $tag8 output DP2-2
-workspace $tag9 output DP2-3
+workspace $tag1 output DP-2-1
+workspace $tag2 output DP-2-2
+workspace $tag3 output DP-2-3
+workspace $tag4 output DP-2-1
+workspace $tag5 output DP-2-2
+workspace $tag6 output DP-2-3
+workspace $tag7 output DP-2-1
+workspace $tag8 output DP-2-2
+workspace $tag9 output DP-2-3
 
 # switch to workspace
 bindsym $mod+1 workspace $tag1

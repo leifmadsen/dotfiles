@@ -21,7 +21,7 @@ fi
 #fi
 
 function _update_ps1() {
-    PS1="$(~/.powerline/powerline-go -error $? -colorize-hostname)"
+    PS1="$(~/.powerline/powerline-go -error $? -colorize-hostname -cwd-max-depth 2)"
 }
 
 if [ "$TERM" != "linux" ]; then
@@ -49,6 +49,7 @@ alias docker-rm-all='docker rm $(docker ps -q -a)'
 alias ccat='pygmentize -g'
 alias pastebin='nc termbin.com 9999'
 alias git=hub
+alias ssh-virthost='ssh -o ProxyCommand="ssh -W %h:%p root@virthost"'
 
 # Cambio colores de terminal
 alias col_dark="sh ~/.config/termcolours/dark.sh"
