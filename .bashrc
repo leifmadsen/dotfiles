@@ -34,12 +34,12 @@ if [ -f ~/.agent.env ] ; then
     if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
         echo "Stale agent file found. Spawning new agent… "
         eval `ssh-agent | tee ~/.agent.env`
-        ssh-add ~/.ssh/id_rsa
+        ssh-add
     fi
 else
     echo "Starting ssh-agent"
     eval `ssh-agent | tee ~/.agent.env`
-    ssh-add ~/.ssh
+    ssh-add
 fi
 
 # User specific aliases and functions
@@ -49,7 +49,9 @@ alias docker-rm-all='docker rm $(docker ps -q -a)'
 alias ccat='pygmentize -g'
 alias pastebin='nc termbin.com 9999'
 alias git=hub
-alias ssh-virthost='ssh -o ProxyCommand="ssh -W %h:%p root@virthost"'
+alias ssh-virthost='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeychecking=no -o ProxyCommand="ssh -W %h:%p root@virthost"'
+alias ssh-whistler='ssh -o ProxyCommand="ssh -W %h:%p -p 2212 leif@whistler.dougbtv.com"'
+alias ssh-remote='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o ProxyCommand="ssh -W %h:%p -p 3128 root@ljam.ddns.net"'
 
 # Cambio colores de terminal
 alias col_dark="sh ~/.config/termcolours/dark.sh"
@@ -78,7 +80,10 @@ export NOTES_DIRECTORY=$HOME/.notes/
 alias playbook=ansible-playbook
 
 # kubernetes
-export KUBECONFIG=cluster-merge:$HOME/.kube/minikube:$HOME/.kube/kube-master.management.61will.space
+export KUBECONFIG=cluster-merge:$HOME/.kube/minikube
+
+# lambdaMOO
+alias lambdamoo="telnet lambda.moo.mud.org 8888"
 
 # add atom.io alias using docker
 alias atom="docker run --privileged -ti --rm -e DISPLAY=$DISPLAY -v ~/.atom:/home/developer/.atom -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/src:/home/developer/src leifmadsen/atom.io"
@@ -101,3 +106,4 @@ export PATH
 # added by travis gem
 [ -f /home/lmadsen/.travis/travis.sh ] && source /home/lmadsen/.travis/travis.sh
 source <(kubectl completion bash)
+source <(kompose completion bash)

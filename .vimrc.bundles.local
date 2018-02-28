@@ -1,3 +1,4 @@
+UnBundle 'scrooloose/syntastic'
 UnBundle 'nathanaelkane/vim-indent-guides'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'pearofducks/ansible-vim'
