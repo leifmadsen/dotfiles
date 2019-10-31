@@ -87,9 +87,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $tag0 "0:laptop"
 set $tag1 "1:social"
-set $tag2 "2:term"
-set $tag3 "3:www"
+set $tag2 "2:work"
+set $tag3 "3:media"
 set $tag4 "4"
 set $tag5 "5"
 set $tag6 "6:gfx"
@@ -97,6 +98,7 @@ set $tag7 "7"
 set $tag8 "8"
 set $tag9 "9"
 
+workspace $tag0 output eDP-1
 workspace $tag1 output DP-2-1
 workspace $tag2 output DP-2-2
 workspace $tag3 output DP-2-3
@@ -117,7 +119,7 @@ bindsym $mod+6 workspace $tag6
 bindsym $mod+7 workspace $tag7
 bindsym $mod+8 workspace $tag8
 bindsym $mod+9 workspace $tag9
-bindsym $mod+0 workspace $tag10
+bindsym $mod+0 workspace $tag0
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $tag1
@@ -129,7 +131,7 @@ bindsym $mod+Shift+6 move container to workspace $tag6
 bindsym $mod+Shift+7 move container to workspace $tag7
 bindsym $mod+Shift+8 move container to workspace $tag8
 bindsym $mod+Shift+9 move container to workspace $tag9
-bindsym $mod+Shift+0 move container to workspace $tag10
+bindsym $mod+Shift+0 move container to workspace $tag0
 
 #bindsym $mod+Shift+1 exec --no-startup-id ~/.config/i3/switch-workspace.py $tag1
 #bindsym $mod+Shift+2 exec --no-startup-id ~/.config/i3/switch-workspace.py $tag2
@@ -147,14 +149,15 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' '/usr/bin/i3-msg exit'"
 
 # change brightness
-bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec /usr/bin/light -A 10
+bindsym XF86MonBrightnessDown exec /usr/bin/light -U 10
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+set $screenresize "Resize: [jkl;] -- Monitor: [1]docked [2]undocked"
+mode $screenresize {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -172,13 +175,17 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
+        # monitor layout
+        bindsym 1 exec sh $HOME/.screenlayout/docked.sh
+        bindsym 2 exec sh $HOME/.screenlayout/undocked.sh
+
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 # resize a window
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode $screenresize
 
 # lock the screen
 bindsym $mod+Shift+x exec sh ~/bin/lock
@@ -215,10 +222,10 @@ exec --no-startup-id stalonetray                    # standalone tray
 exec --no-startup-id nm-applet                      # network manager applet
 exec --no-startup-id /usr/local/bin/pa-applet       # audio applet
 exec --no-startup-id firewall-applet
-exec --no-startup-id "dropbox start &"
+#exec --no-startup-id "dropbox start &"
 exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/pattern-square-mosaic-tile.jpg
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
-exec --no-startup-id gapcmon        # UPS monitor
+#exec --no-startup-id gapcmon        # UPS monitor
 exec --no-startup-id liferea        # RSS feed reader
 exec --no-startup-id redshift       # setup screen temps based on location and time of day
 exec --no-startup-id xfce4-power-manager    # enable power management
@@ -263,11 +270,13 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # custom bar
-for_window [class="Gsimplecal"] floating enable
-for_window [class="Gsimplecal"] move absolute position 1660px 850px
-for_window [class="XTerm"] floating enable
+for_window [class="google play music desktop player"] floating enable, move container to workspace $tag3, resize set width 640px height 640px
+for_window [class="Gsimplecal"] floating enable, move absolute position 1660px 850px
 for_window [class="Gcalctool"] floating enable
+for_window [class="XTerm"] floating enable
 for_window [class="xmms"] floating enable border 1pixel
+for_window [class="qjackctl"] floating enable border 1pixel
+
 
 # My bar
 bar {

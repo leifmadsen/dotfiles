@@ -1,6 +1,7 @@
 #! /bin/bash
 #
 # I3 bar with https://github.com/LemonBoy/bar
+$HOME/bin/fontsetup
 
 . $(dirname $0)/i3_lemonbar_config
 

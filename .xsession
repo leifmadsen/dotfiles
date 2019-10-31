@@ -8,14 +8,14 @@ xset b 15 200 150
 
 # protect the screen after 60 minutes
 xset s off
-xset dpms 600 1200 1800
+#xset dpms 600 1200 1800
 
 # load up the fonts
-xset fp+ $HOME/.fonts/misc
-xset fp+ $HOME/.fonts/ohsnap
-xset fp+ $HOME/.fonts/terminesspowerline
-xset fp+ $HOME/.fonts/tewi
-fc-cache -v
+#xset fp+ /usr/share/fonts/misc
+#xset fp+ /usr/share/fonts/ohsnap
+#xset fp+ /usr/share/fonts/terminesspowerline
+#xset fp+ /usr/share/fonts/tewi
+#fc-cache -v
 
 # start powerline daemon
 /usr/bin/powerline-daemon

@@ -21,8 +21,12 @@ fi
 #fi
 
 function _update_ps1() {
-    PS1="$(~/.powerline/powerline-go -error $? -colorize-hostname -cwd-max-depth 2)"
+    PS1="$(~/src/go/bin/powerline-go -colorize-hostname -shorten-gke-names -modules "kube,venv,user,ssh,cwd,docker,node,dotenv,git,jobs,nix-shell,perms,exit,root,ssh,termtitle" -cwd-max-depth 3 -path-aliases \~/src/go/src/github.com=@GO-GH -error $?)"
 }
+
+#function _update_ps1() {
+#    PS1="$(~/.powerline/powerline-go -cwd-max-depth 3 -modules "nix-shell,docker,venv,user,host,ssh,cwd,perms,git,hg,jobs,exit,root,vgo")"
+#}
 
 if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
@@ -52,6 +56,8 @@ alias git=hub
 alias ssh-virthost='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeychecking=no -o ProxyCommand="ssh -W %h:%p root@virthost"'
 alias ssh-whistler='ssh -o ProxyCommand="ssh -W %h:%p -p 2212 leif@whistler.dougbtv.com"'
 alias ssh-remote='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o ProxyCommand="ssh -W %h:%p -p 3128 root@ljam.ddns.net"'
+alias ssh-salab='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeychecking=no -o ProxyCommand="ssh -W %h:%p root@10.19.110.11"'
+
 
 # Cambio colores de terminal
 alias col_dark="sh ~/.config/termcolours/dark.sh"
@@ -80,7 +86,7 @@ export NOTES_DIRECTORY=$HOME/.notes/
 alias playbook=ansible-playbook
 
 # kubernetes
-export KUBECONFIG=cluster-merge:$HOME/.kube/minikube
+export KUBECONFIG=$HOME/.kube/config
 
 # lambdaMOO
 alias lambdamoo="telnet lambda.moo.mud.org 8888"
@@ -92,8 +98,19 @@ alias atom="docker run --privileged -ti --rm -e DISPLAY=$DISPLAY -v ~/.atom:/hom
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R "
 
+alias oc=~/.local/bin/oc3
+
+# notifier
+alias notify=~/bin/pushbullet_notify.sh
+
+# find large files (ducks) [ref: https://www.cyberciti.biz/faq/linux-find-largest-file-in-directory-recursively-using-find-du/]
+alias ducks='du -cks * | sort -rn | head'
+
 # GHI (GitHub Issues CLI client)
 source ~/.private/tokens/ghi
+
+# Quay.io token
+source ~/.private/tokens/quay.io
 
 # starred repo token
 source ~/.private/tokens/github_starred_token
@@ -105,5 +122,6 @@ export PATH
 
 # added by travis gem
 [ -f /home/lmadsen/.travis/travis.sh ] && source /home/lmadsen/.travis/travis.sh
-source <(kubectl completion bash)
+#source <(kubectl completion bash)
 source <(kompose completion bash)
+source <(oc completion bash)

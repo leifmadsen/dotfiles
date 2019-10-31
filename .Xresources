@@ -1,10 +1,3 @@
-! Configuración de recursos X
-! 02 ene 2015 - E7
-! vim: set ft=xdefaults:
-
-! XFT - Fuentes
-!----------------------------------------------------------------------
-
 Xft.dpi: 96
 Xft.antialias: 1
 Xft.rgba: rgb
@@ -12,17 +5,6 @@ Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hinting: 1
 Xft.hintstyle: hintSlight
-
 Xcursor.theme:	 Neutral
-!*font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 *font: -xos4-terminesspowerline-medium-r-normal--1-140-72-72-c-80-iso10646-1
-
-! Colores
-!----------------------------------------------------------------------
-!#include "/home/lmadsen/.config/termcolours/jellybeans"
-!#include "/home/lmadsen/.config/termcolours/hybrid"
-!#include "/home/lmadsen/.config/termcolours/base16-solarized.light"
 #include "/home/lmadsen/.config/termcolours/hybrid_e7"
-!#include "/home/lmadsen/.config/termcolours/solarized"
-!#include "/home/lmadsen/.config/termcolours/s3r0"
-!#include "/home/lmadsen/.config/termcolours/nix_e7"
