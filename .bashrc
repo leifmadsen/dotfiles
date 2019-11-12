@@ -21,7 +21,7 @@ fi
 #fi
 
 function _update_ps1() {
-    PS1="$(~/src/go/bin/powerline-go -colorize-hostname -shorten-gke-names -modules "kube,venv,user,ssh,cwd,docker,node,dotenv,git,jobs,nix-shell,perms,exit,root,ssh,termtitle" -cwd-max-depth 3 -path-aliases \~/src/go/src/github.com=@GO-GH -error $?)"
+    eval $(powerline-go -eval -colorize-hostname -shorten-gke-names -modules "user,kube,venv,ssh,cwd,docker,node,dotenv,git,jobs,nix-shell,perms,exit,termtitle" -cwd-max-depth 3 -path-aliases \~/src/go/src/github.com=@GO-GH -error $?)
 }
 
 #function _update_ps1() {
