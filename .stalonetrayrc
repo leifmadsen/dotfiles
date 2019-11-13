@@ -1,8 +1,8 @@
 decorations none
 transparent false
 dockapp_mode none
-geometry 11x1+1740+0
-max_geometry 11x1+1920-0
+geometry 15x1+1740+0
+max_geometry 15x2+1920-0
 background "#B5BD68"
 kludges force_icons_size
 grow_gravity W
