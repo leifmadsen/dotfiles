@@ -98,7 +98,7 @@ alias atom="docker run --privileged -ti --rm -e DISPLAY=$DISPLAY -v ~/.atom:/hom
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R "
 
-alias oc=~/.local/bin/oc3
+alias oc=~/.local/bin/oc4
 
 # notifier
 alias notify=~/bin/pushbullet_notify.sh

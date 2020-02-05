@@ -6,5 +6,5 @@ Xft.lcdfilter: lcddefault
 Xft.hinting: 1
 Xft.hintstyle: hintSlight
 Xcursor.theme:	 Neutral
-*font: -xos4-terminesspowerline-medium-r-normal--1-140-72-72-c-80-iso10646-1
+#*font: -xos4-terminesspowerline-medium-r-normal--1-140-72-72-c-80-iso10646-1
 #include "/home/lmadsen/.config/termcolours/hybrid_e7"

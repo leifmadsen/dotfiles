@@ -35,7 +35,8 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec rofi -modi drun -show drun -lines 10 -eh 1 -padding 2 -font "Hack 10" -theme Adapta-Nokto
 
 # change focus
 bindsym $mod+j focus left
@@ -99,15 +100,15 @@ set $tag8 "8"
 set $tag9 "9"
 
 workspace $tag0 output eDP-1
-workspace $tag1 output DP-2-1
+workspace $tag1 output DP-2-3
 workspace $tag2 output DP-2-2
-workspace $tag3 output DP-2-3
-workspace $tag4 output DP-2-1
+workspace $tag3 output DP-2-1
+workspace $tag4 output DP-2-3
 workspace $tag5 output DP-2-2
-workspace $tag6 output DP-2-3
-workspace $tag7 output DP-2-1
+workspace $tag6 output DP-2-1
+workspace $tag7 output DP-2-3
 workspace $tag8 output DP-2-2
-workspace $tag9 output DP-2-3
+workspace $tag9 output DP-2-1
 
 # switch to workspace
 bindsym $mod+1 workspace $tag1
@@ -220,6 +221,7 @@ assign [class="Gimp"] $tag6
 # auto-started applications on login
 exec --no-startup-id stalonetray                    # standalone tray
 exec --no-startup-id nm-applet                      # network manager applet
+exec --no-startup-id blueman-applet                 # bluetooth applet
 exec --no-startup-id /usr/local/bin/pa-applet       # audio applet
 exec --no-startup-id firewall-applet
 #exec --no-startup-id "dropbox start &"
@@ -270,9 +272,9 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # custom bar
-for_window [class="google play music desktop player"] floating enable, move container to workspace $tag3, resize set width 640px height 640px
+for_window [class="Google Play Music Desktop Player"] move container to workspace $tag3
 for_window [class="Gsimplecal"] floating enable, move absolute position 1660px 850px
-for_window [class="Gcalctool"] floating enable
+for_window [class="Gnome-calculator"] floating enable, resize set width 500px height 600px
 for_window [class="XTerm"] floating enable
 for_window [class="xmms"] floating enable border 1pixel
 for_window [class="qjackctl"] floating enable border 1pixel
